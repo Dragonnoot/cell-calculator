@@ -7,7 +7,9 @@
 </head>
 <body>
 
-    <p>wip</p>
+    <img src="https://imgs.search.brave.com/5vn5r227Ek4m0WM-G3TylHcdFtM1EPhqWT2J5Nj7cRE/rs:fit:400:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC55/YVB2N1R3TUxHcl9p/S0ViSHNZMXJnQUFB/QSZwaWQ9QXBp">
+
+    <p id="overHead">Dragonnoot's Calculator</p>
 
     <script>
 
@@ -18,19 +20,48 @@
         // NO FRACTIONS. CONVERT THAT.
         // I am going to create custom units and equations. If you don't like that cry.
         // Arson is okay sometimes.
-        // Currently *ONLY* spherical eukaryotic cells.
+        // Currently *ONLY* spherical eukaryotic cells. Only fauna of course
         // µ is key code 230 on windows
 
         // Cells being used tend to be 10 to 100µm
 
+        // Damien factor in organelles ); i know its painful math but
+        // come on bro 
+
         const pi = 3.14159;
+        const fract4_3 = 1.33333;
+        const water_ul_to_ug = 0.001;
+
+        // // general cell possibilities // //
+        // genes_radius_um: [10, 30, 50, 75, 100], // um is referring to µm AKA micrometers
+        //     genes_wall: ["p_bi", "p_uni"], // p_bi = Two layers of phospholipids, while p_uni is just one. (layers)
+        //     genes_cytoplasm_water_ratio_per: [70, 75, 80, 85], // The ratio of water to other substances (percent)
+
+        // temporary cell params FIX FIX FIX FIX FIX FIX FIX FIX
+        // fix is just add some inputs and info and a Calculate button
+        const cell_diameter_um = 10;
+        const water_ratio = 0.7; // ratio of water to cytoplasm in % but in float form
 
         const earth = {
-            gravity_ms2 = 9.80665, // ms2 referring to unit: M/Sec^2
-            genes_radius_um = [10, 30, 50, 75, 100], // um is referring to µm AKA micrometers
-            genes_wall = ["p_bi", "p_uni"], // p_bi = Two layers of phospholipids, while p_uni is just one. (layers)
-            genes_cytoplasm_water_ratio_per = [70, 75, 80, 85], // The ratio of water to other substances (percent)
+            gravity_ms2: 9.80665, // ms2 referring to unit: M/Sec^2
+        }
+
+        // Equation tools:
+        function radius(diameter) { // Normally this would be redundant, but it can help
+            return diameter / 2; //    make it clear that I'm using the radius in equations
+        }
+        function square(x) {
+            return x*x;
+        };
+        function cube(x) {
+            return x*x*x;
+        }
+
+        // Cell calculations:
+        function volume_ul(diameter_um) {
+            return fract4_3*pi*cube(radius(diameter_um));
         }
 
     </script>
+    <!-- If you complete this contact someone from https://www.imdb.com/title/tt13464340/fullcredits?ref_=tt_ov_st_sm -->
 </body>
