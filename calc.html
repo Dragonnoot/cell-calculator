@@ -181,9 +181,12 @@
             return x*x*x;
         }
 
-        // Cell calculations:
-        function volume_ul(diameter_um) {
+        // Simple volume calculations:
+        function sphere_volume_ul(diameter_um) {
             return fract4_3*pi*cube(radius(diameter_um));
+        }
+        function cylinder_volume_ul(diameter_um, length_um) {
+            return pi*square(radius(diameter_um))*length_um;
         }
 
     </script>
