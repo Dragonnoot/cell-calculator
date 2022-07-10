@@ -7,35 +7,41 @@
 </head>
 <body>
 
-    <img src="https://imgs.search.brave.com/5vn5r227Ek4m0WM-G3TylHcdFtM1EPhqWT2J5Nj7cRE/rs:fit:400:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC55/YVB2N1R3TUxHcl9p/S0ViSHNZMXJnQUFB/QSZwaWQ9QXBp">
+    <p id="c-overHead">Dragonnoot's Calculator</p>
 
-    <p id="overHead">Dragonnoot's Calculator</p>
+    <p id="c-info">Fill out the following fields with whatever values you'd like. Just remember: Hover over the label of each one to see clarifications and limits. Please <strong>never give negative numbers.</strong></p>
+
+    <p class="m-field-title" title="Most eukaryotic cells range from 10 to 100µm. Values higher or lower than this may cause the creature to be non-producable.">Cell Diameter (µm)</p>
+    <input class="m-text-field" type="text" >
+    <p class="m-field-title" title="Typically 70 - 85%, written as 0.7 - 0.85.">Percentage of water in cytoplasm (Percentage in Decimal form)</p>
+    <input class="m-text-field" type="text">
+    <p class="m-field-title" title="Almost always 1-2. Other numbers may cause death.">Phospholipid layers</p>
+    <input class="m-text-field" type="text">
 
     <script>
 
         // For fauna not flora
         // Will have different planets available later,
         // ***Metric system or I'll use your kneecaps to make spaghetti.***
+        // am using fahrenheit though
         // Going to 5 decimal points, no more no less.
         // NO FRACTIONS. CONVERT THAT.
         // I am going to create custom units and equations. If you don't like that cry.
         // Arson is okay sometimes.
-        // Currently *ONLY* spherical eukaryotic cells. Only fauna of course
+        // Currently *ONLY* representing as spherical eukaryotic cells. Only fauna of course
+        // Percentages like this: 0.5, 0.25 instead of 1/2 or 1/4
         // µ is key code 230 on windows
+
+        // Vena is a custom unit I am using for measuring "personality". No official specific conversions yet. (From root venator)
 
         // Cells being used tend to be 10 to 100µm
 
-        // Damien factor in organelles ); i know its painful math but
-        // come on bro 
-
         const pi = 3.14159;
         const fract4_3 = 1.33333;
-        const water_ul_to_ug = 0.001;
+        const water_ul_to_ug = 0.00100;
 
         // // general cell possibilities // //
-        // genes_radius_um: [10, 30, 50, 75, 100], // um is referring to µm AKA micrometers
         //     genes_wall: ["p_bi", "p_uni"], // p_bi = Two layers of phospholipids, while p_uni is just one. (layers)
-        //     genes_cytoplasm_water_ratio_per: [70, 75, 80, 85], // The ratio of water to other substances (percent)
 
         // temporary cell params FIX FIX FIX FIX FIX FIX FIX FIX
         // fix is just add some inputs and info and a Calculate button
