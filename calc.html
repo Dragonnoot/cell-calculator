@@ -148,30 +148,31 @@
                 };
         }
 
-        function construct_flora(name, avg_mass_ug, nutrition_table, edible_age_min_days, is_poisonous, abundance) {
+        // FLORA REFERS TO EDIBLE PLANT MATTER
+        function construct_flora(name, avg_mass_mig, nutrition_table, edible_age_min_days, is_poisonous, abundance) {
             return {
                 name,
-                avg_mass_ug,
+                avg_mass_mig,
                 nutrition_table,
                 edible_age_min_days,
                 is_poisonous,
-                abundance, // "high", "normal", "low"
+                abundance, // "high" | "normal" | "low"
             }
         }
 
-        function construct_nutrition_table(a, a_mass_um, b, b_mass_um, c, c_mass_um) {
+        function construct_nutrition_table(a, a_mass_mig, b, b_mass_mig, c, c_mass_mig) {
             return {
                 nutrient_a: {
                     name: a,
-                    mass_um: a_mass_um,
+                    mass_um: a_mass_mig,
                 },
                 nutrient_b: {
                     name: b,
-                    mass_um: b_mass_um,
+                    mass_um: b_mass_mig,
                 },
                 nutrient_c: {
                     name: c,
-                    mass_um: c_mass_um,
+                    mass_um: c_mass_mig,
                 }
             }
         }
@@ -188,7 +189,7 @@
             9.80665,
              [],
              [
-                construct_flora("sweetgrass", 100, construct_nutrition_table("fiber", 50, "sugar", 75, "protein", 25 ), 2, false, "high"),
+                construct_flora("sweetgrass", 1.5, construct_nutrition_table("fiber", 5, "sugar", 7, "protein", 2.5), 2, false, "high"),
              ],
              );
 
