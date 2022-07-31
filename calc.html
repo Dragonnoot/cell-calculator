@@ -55,10 +55,16 @@
         const fract4_3 = 1.33333;
         const water_ul_to_ug = 0.00100;
 
-        // // general cell possibilities // //
-        //     genes_wall: ["p_bi", "p_uni"], // p_bi = Two layers of phospholipids, while p_uni is just one. (layers)
+        function construct_stemcell_verbose( //TODO
+            cell_radius,
+            
+            phospholipid_layers,
+         ) {
+            return 0;
+         }
 
         function construct_fauna_verbose(
+            name,
 
             diet_main,
             diet_secondary, 
@@ -99,8 +105,9 @@
 
             ) {
                 return {
-
-                    diet_main, // "carnivore" | "herbivore" | "insectivore" | etc. No omnivore - but can pass in "any" for all food types.
+                    name,
+                    
+                    diet_main, // "carnivore" | "herbivore" | "insectivore" | "detrivore" | etc. No omnivore - but can pass in "any" for all food types.
                     diet_secondary, // Same, but add "none" option
                     aggression_vena, // 0-20vn
                     intelligence_vena, // 0-20vn
@@ -112,8 +119,8 @@
                     body_length_tailexclusive_um, // Include head, but not tail
                     body_width_um, // Measured as most extreme distance of feet when standing neutrally
                     
-                    pupil_diameter_horizontal_um,
-                    pupil_diameter_vertical_um,
+                    pupil_diameter_horizontal_um, // Average between diameter for night and diameter for day
+                    pupil_diameter_vertical_um, // same
                     eyesight_range_rating, // "blind" | "photosensing_eyes" | "photosensing_fullbody" | "nearsighted" | "farsighted" | "normal" | "incredible"
                     vision_period, // "day" | "day-leaning" | "night-leaning" | "night" (What time of day does it see best?)
                     
@@ -204,6 +211,19 @@
             return pi*square(radius(diameter_um))*length_um;
         }
 
+        document.getElementById("sb-phospho1").addEventListener('click', function () {
+            document.getElementById("sb-phospho1").classList.add("selected-button");
+            document.getElementById("sb-phospho1").classList.remove("alternative-button");
+            document.getElementById("sb-phospho2").classList.add("alternative-button");
+            document.getElementById("sb-phospho2").classList.remove("selected-button");
+        });
+        document.getElementById("sb-phospho2").addEventListener('click', function () {
+            document.getElementById("sb-phospho2").classList.add("selected-button");
+            document.getElementById("sb-phospho2").classList.remove("alternative-button");
+            document.getElementById("sb-phospho1").classList.add("alternative-button");
+            document.getElementById("sb-phospho1").classList.remove("selected-button");
+        });
+
     </script>
-    <!-- If you complete this contact someone from https://www.imdb.com/title/tt13464340/fullcredits?ref_=tt_ov_st_sm -->
+    <!-- nevermind that series was not as realistic as I thought at first, throw them out :( -->
 </body>
