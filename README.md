@@ -1,7 +1,7 @@
 # cell-calculator
 complicated and unprofessional (:&lt;
 
-This is a script I'm working on that is inspired by Alien Worlds on Netflix, Spore, and SPECIES. (Okay, maybe also Niche and Equilinox)
+This is an application I'm working on that is inspired by Alien Worlds on Netflix, Spore, and SPECIES. (Okay, maybe also Niche and Equilinox and Thrive and [insert 57 other titles])
 [FINISH LATER]
 
 Anyways if you're from me school then yes It's me Damien and no do not bring up this project it will hurt my brain please and thanks
