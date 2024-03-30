@@ -70,8 +70,8 @@
 
             diet_main,
             diet_secondary, 
-            aggression_vena, 
-            intelligence_vena, 
+            aggression_vn, 
+            intelligence_vn, 
             internal_clock, 
             typical_pack_size, 
             
@@ -79,7 +79,9 @@
             ribcage_height_um,
             body_length_tailexclusive_um,
             body_width_um,
+            stance_length_cm,
 
+            nictitating_membrane,
             pupil_diameter_horizontal_um,
             pupil_diameter_vertical_um,
             eyesight_range_rating,
@@ -111,32 +113,52 @@
                     
                     diet_main, // "carnivore" | "herbivore" | "insectivore" | "detrivore" | etc. No omnivore - but can pass in "any" for all food types.
                     diet_secondary, // Same, but add "none" option
-                    aggression_vena, // 0-20vn
-                    intelligence_vena, // 0-20vn
-                    internal_clock, // "diurnal" | "nocturnal"
+                    aggression_vn, // 0-20vn
+                    intelligence_vn, // 0-20vn
+                    internal_clock, // "diurnal" | "nocturnal" | "Crepuscular" | Cathemeral
                     typical_pack_size, // integer
                     
-                    height_um, // Height to highest part of bodily spine (Not tail or head)
-                    ribcage_height_um,
-                    body_length_tailexclusive_um, // Include head, but not tail
-                    body_width_um, // Measured as most extreme distance of feet when standing neutrally
+                    height_cm, // Height to highest part of bodily spine (Not tail or head)
+                    ribcage_height_cm, // Floor to lowest rib
+                    body_length_tailexclusive_cm, // Include head, but not tail
+                    body_width_cm, // Measured as most extreme horizontal distance of feet when standing neutrally head-on
+                    stance_length_cm, // Most extreme horizontal distance of feet when standing neutrally profile
                     
+
+                // A - Height, B - Ribcage lower bound, C-C* - Body Len W/o tail
+                //        xx
+                //       xxxx
+                // xxxxxxxxCxx
+                // xxxxxxxxxxxx
+                //        xxxxxxxAxxxxxxxxxxxxxxxxxxx
+                //         xxxxxxxxxxxxxxxxxxxxxxxxxxC*xx
+                //           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                //             xxxxxxxBxxxxxxxxxxxxxxx
+                //              xxxxxxxx       xxxxxx
+                //              xxxx            xxxxxx
+                //              xxx              xxxxx
+                //              xxx                 xx
+                //              xxx                 xx
+                //            xxxxx              xxxxx
+                //            xxxxx              xxxx
+                // (*Not To Scale*)
+                    nictitating_membrane, // Clear membrane over eyes
                     pupil_diameter_horizontal_um, // Average between diameter for night and diameter for day
                     pupil_diameter_vertical_um, // same
                     eyesight_range_rating, // "blind" | "photosensing_eyes" | "photosensing_fullbody" | "nearsighted" | "farsighted" | "normal" | "incredible"
-                    vision_period, // "day" | "day-leaning" | "night-leaning" | "night" (What time of day does it see best?)
+                    vision_period, // "blind" | "day" | "day-leaning" | "night-leaning" | "night" (What time of day does it see best?)
                     
                     max_speed_um_sec,
                     exclusive_limbs, // Exclusive as in excluding tails
                     planted_feet, // Usually 2 (bipeds) or 4 (quadrupeds) but could be anything
-                    locomotion_style, // "unguligrade" | "digitigrade" | "plantigrade"
+                    locomotion_style, // "unguligrade" | "digitigrade" | "plantigrade" | "insect" | "wiggle"
                     flying_status, // "ground" | "short_gliding" | "long_gliding" | "flying" | "maximum_flying" (Rarely touches ground)
                     adult_weight_g,
                     young_weight_g,
                     
                     wild_lifespan_avg_day,
                     maturity_age_day,
-                    gestation_time_day,
+                    gestation_time_day, // Or egg incubation time
                     litter_size_avg,
 
                     internal_temp_avg_f,
